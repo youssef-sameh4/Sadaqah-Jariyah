@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صدقة جارية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="Azkar2.css">
+</head>
+<body>
+
+<!-- ================= LOADER ================= -->
+<div id="loader">
+  <div class="loader-mark">
+    <svg viewBox="0 0 100 100" width="72" height="72">
+      <polygon points="50,4 61,39 98,39 68,61 79,96 50,74 21,96 32,61 2,39 39,39" fill="none" stroke="url(#gGold)" stroke-width="2"/>
+      <defs>
+        <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#d4af37"/>
+          <stop offset="1" stop-color="#f4e5a1"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-mosque"></i></span>
+      <span class="brand-name">صدقة جارية</span>
+    </div>
+    <nav class="header-nav" id="headerNav">
+      <a href="#dashboard" data-nav="dashboard">الرئيسية</a>
+    
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="mainContent">
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero" id="hero">
+    <div class="hero-noor" aria-hidden="true">
+      <svg viewBox="0 0 600 600" class="noor-ring">
+        <g class="noor-arcs">
+          <circle cx="300" cy="300" r="270" class="arc a1"/>
+          <circle cx="300" cy="300" r="230" class="arc a2"/>
+          <circle cx="300" cy="300" r="190" class="arc a3"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-content fade-in-up">
+      <p class="hero-eyebrow">هذا العمل صدقة جارية بإذن الله</p>
+      <h1 class="hero-title">صدقة جارية على روح</h1>
+
+      <div class="deceased-card" id="deceasedCard">
+        <div class="deceased-glow"></div>
+        <span class="deceased-label">رحم الله </span>
+       <h2 class="deceased-name" id="deceasedName"></h2>
+      </div>
+
+      <p class="hero-verse">﴿ رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا ﴾</p>
+
+      <p class="hero-message">
+        نسأل الله أن يجعل هذا العمل صدقة جارية، وأن يرحم فقيدنا، ويغفر له، ويجعل قبره روضة من رياض الجنة.
+      </p>
+
+      <button class="cta-button" id="startBtn">
+        <span>ابدأ الآن</span>
+        <i class="fa-solid fa-arrow-down"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= DASHBOARD ================= -->
+  <section class="dashboard" id="dashboard">
+    <div class="section-head fade-in-up">
+      <span class="section-eyebrow">اختر عملك اليوم</span>
+      <h2>الأعمال الصالحة</h2>
+      <p>كل ذكر تقرأه، وكل صفحة تتلوها، تُرفع صدقة جارية لروح فقيدنا</p>
+    </div>
+
+    <div class="cards-grid">
+      <button class="feature-card fade-in-up" data-target="morning" style="--delay:0">
+        <div class="card-icon grad-1"><i class="fa-solid fa-sun"></i></div>
+        <h3>أذكار الصباح</h3>
+        <p>ابدأ يومك بذكر الله والاستعانة به</p>
+        <span class="card-progress" data-progress="morning">0%</span>
+      </button>
+
+      <button class="feature-card fade-in-up" data-target="evening" style="--delay:1">
+        <div class="card-icon grad-2"><i class="fa-solid fa-moon"></i></div>
+        <h3>أذكار المساء</h3>
+        <p>اختم يومك بحصن من حصون الذاكرين</p>
+        <span class="card-progress" data-progress="evening">0%</span>
+      </button>
+
+      <button class="feature-card fade-in-up" data-target="quran" style="--delay:2">
+        <div class="card-icon grad-3"><i class="fa-solid fa-book-quran"></i></div>
+        <h3>ورد القرآن</h3>
+        <p>حدد وردك اليومي وتابع تقدمك</p>
+        <span class="card-progress" data-progress="quran">0 صفحة</span>
+      </button>
+
+      <button class="feature-card fade-in-up" data-target="salawat" style="--delay:3">
+        <div class="card-icon grad-4"><i class="fa-solid fa-heart"></i></div>
+        <h3>الصلاة على النبي ﷺ</h3>
+        <p>أكثر من الصلاة على خير الأنام</p>
+        <span class="card-progress" data-progress="salawat">0</span>
+      </button>
+
+      <button class="feature-card fade-in-up" data-target="istighfar" style="--delay:4">
+        <div class="card-icon grad-5"><i class="fa-solid fa-hands-praying"></i></div>
+        <h3>الاستغفار</h3>
+        <p>استغفر الله ففي الاستغفار كل خير</p>
+        <span class="card-progress" data-progress="istighfar">0</span>
+      </button>
+
+      <button class="feature-card fade-in-up" data-target="tasbih" style="--delay:5">
+        <div class="card-icon grad-6"><i class="fa-solid fa-circle-dot"></i></div>
+        <h3>السبحة الإلكترونية</h3>
+        <p>سبحة رقمية بأذكار متعددة</p>
+        <span class="card-progress" data-progress="tasbih">0</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= AZKAR (MORNING/EVENING) TEMPLATE PAGE ================= -->
+  <section class="sub-page" id="morning" data-azkar="morning">
+    <div class="sub-page-inner">
+      <button class="back-btn" data-back><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+      <div class="sub-header">
+        <div class="sub-icon grad-1"><i class="fa-solid fa-sun"></i></div>
+        <h2>أذكار الصباح</h2>
+      </div>
+      <div class="azkar-progress-bar"><div class="azkar-progress-fill" data-fill="morning"></div></div>
+      <div class="azkar-list" data-list="morning"></div>
+      <div class="azkar-done-message" data-done="morning">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>تقبل الله منك</h3>
+        <p>أتممت أذكار الصباح كاملة</p>
+        <button class="ghost-btn" data-reset="morning">إعادة من جديد</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-page" id="evening" data-azkar="evening">
+    <div class="sub-page-inner">
+      <button class="back-btn" data-back><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+      <div class="sub-header">
+        <div class="sub-icon grad-2"><i class="fa-solid fa-moon"></i></div>
+        <h2>أذكار المساء</h2>
+      </div>
+      <div class="azkar-progress-bar"><div class="azkar-progress-fill" data-fill="evening"></div></div>
+      <div class="azkar-list" data-list="evening"></div>
+      <div class="azkar-done-message" data-done="evening">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>تقبل الله منك</h3>
+        <p>أتممت أذكار المساء كاملة</p>
+        <button class="ghost-btn" data-reset="evening">إعادة من جديد</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= QURAN WIRD PAGE ================= -->
+  <section class="sub-page" id="quran">
+    <div class="sub-page-inner">
+      <button class="back-btn" data-back><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+      <div class="sub-header">
+        <div class="sub-icon grad-3"><i class="fa-solid fa-book-quran"></i></div>
+        <h2>ورد القرآن اليومي</h2>
+      </div>
+
+      <p class="page-lead">اختر مقدار وردك اليومي، وسجّل ما قرأته كل يوم صدقةً جارية لفقيدنا</p>
+
+      <div class="wird-options" id="wirdOptions">
+        <button class="wird-chip" data-unit="page" data-amount="1">صفحة واحدة</button>
+        <button class="wird-chip" data-unit="page" data-amount="2">صفحتان</button>
+        <button class="wird-chip" data-unit="page" data-amount="5">٥ صفحات</button>
+        <button class="wird-chip" data-unit="page" data-amount="10">١٠ صفحات</button>
+        <button class="wird-chip" data-unit="hizb" data-amount="1">حزب واحد</button>
+        <button class="wird-chip" data-unit="juz" data-amount="1">جزء واحد</button>
+      </div>
+
+      <div class="wird-today-card">
+        <div class="wird-stat">
+          <span class="wird-stat-label">هدف اليوم</span>
+          <span class="wird-stat-value" id="wirdGoalLabel">لم يُحدد بعد</span>
+        </div>
+        <div class="wird-ring-wrap">
+          <svg viewBox="0 0 140 140" class="wird-ring">
+            <circle cx="70" cy="70" r="60" class="ring-bg"/>
+            <circle cx="70" cy="70" r="60" class="ring-fill" id="wirdRingFill"/>
+          </svg>
+          <div class="wird-ring-center">
+            <span id="wirdTodayValue">0</span>
+            <small id="wirdTodayUnit">صفحة</small>
+          </div>
+        </div>
+        <div class="wird-controls">
+          <button class="round-btn" id="wirdMinus"><i class="fa-solid fa-minus"></i></button>
+          <span id="wirdStep">قراءة وحدة واحدة</span>
+          <button class="round-btn" id="wirdPlus"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+
+      <div class="wird-total-card">
+        <i class="fa-solid fa-chart-line"></i>
+        <div>
+          <span class="wird-total-label">إجمالي ما قُرئ حتى الآن</span>
+          <span class="wird-total-value"><span id="wirdTotalValue">0</span> صفحة</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SALAWAT PAGE ================= -->
+  <section class="sub-page" id="salawat">
+    <div class="sub-page-inner">
+      <button class="back-btn" data-back><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+      <div class="sub-header">
+        <div class="sub-icon grad-4"><i class="fa-solid fa-heart"></i></div>
+        <h2>الصلاة على النبي ﷺ</h2>
+      </div>
+
+      <div class="formula-carousel" id="salawatFormulas" data-formulas="salawat"></div>
+
+      <div class="counter-panel">
+        <button class="counter-tap" id="salawatCounter">
+          <span class="counter-number" id="salawatNumber">0</span>
+          <span class="counter-hint">اضغط للعدّ</span>
+        </button>
+        <div class="counter-actions">
+          <button class="round-btn danger" id="salawatReset"><i class="fa-solid fa-rotate-left"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ISTIGHFAR PAGE ================= -->
+  <section class="sub-page" id="istighfar">
+    <div class="sub-page-inner">
+      <button class="back-btn" data-back><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+      <div class="sub-header">
+        <div class="sub-icon grad-5"><i class="fa-solid fa-hands-praying"></i></div>
+        <h2>الاستغفار</h2>
+      </div>
+
+      <div class="formula-carousel" id="istighfarFormulas" data-formulas="istighfar"></div>
+
+      <div class="counter-panel">
+        <button class="counter-tap" id="istighfarCounter">
+          <span class="counter-number" id="istighfarNumber">0</span>
+          <span class="counter-hint">اضغط للعدّ</span>
+        </button>
+        <div class="counter-actions">
+          <button class="round-btn danger" id="istighfarReset"><i class="fa-solid fa-rotate-left"></i></button>
+        </div>
+      </div>
+
+      <div class="completion-flash" id="istighfarFlash">
+        <i class="fa-solid fa-sparkles"></i>
+        <span>استغفر الله العظيم</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DIGITAL TASBIH PAGE ================= -->
+  <section class="sub-page" id="tasbih">
+    <div class="sub-page-inner">
+      <button class="back-btn" data-back><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+      <div class="sub-header">
+        <div class="sub-icon grad-6"><i class="fa-solid fa-circle-dot"></i></div>
+        <h2>السبحة الإلكترونية</h2>
+      </div>
+
+      <div class="dhikr-modes" id="dhikrModes"></div>
+
+      <div class="counter-panel">
+        <button class="counter-tap tasbih-tap" id="tasbihCounter">
+          <span class="counter-number" id="tasbihNumber">0</span>
+          <span class="counter-hint" id="tasbihCurrentText">سبحان الله</span>
+        </button>
+        <div class="counter-actions">
+          <button class="round-btn danger" id="tasbihReset"><i class="fa-solid fa-rotate-left"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-dua">اللهم اغفر له وارحمه وعافه واعف عنه.</p>
+    <p class="footer-request">نسألكم الدعاء له بالرحمة والمغفرة.</p>
+    <p class="footer-meta">صدقة جارية &middot; صُنعت بمحبة لروح كل فقيد عزيز</p>
+  </div>
+</footer>
+
+<script src="Azkar2.js"></script>
+</body>
+</html>
