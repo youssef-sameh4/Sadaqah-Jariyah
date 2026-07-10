@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدقة جارية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Azkar.css">
+</head>
+<body class="light-mode">
+
+    <div id="loader" class="loader-container">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <i class="fa-solid fa-mosque brand-icon"></i>
+                <span class="brand-name">الأثر الصالح</span>
+            </div>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-bg-decor"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title animate-up">صدقة جارية على روح</h1>
+            
+            <div class="deceased-card animate-up delay-1">
+                <h2 class="deceased-name">رحم الله / فاعل خير</h2>
+            </div>
+
+            <p class="quran-verse animate-up delay-2">﴿ رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا ﴾</p>
+            
+            <p class="hero-message animate-up delay-3">
+                نسأل الله أن يجعل هذا العمل صدقة جارية، وأن يرحم فقيدنا، ويغفر له، ويجعل قبره روضة من رياض الجنة.
+            </p>
+
+            <button id="start-btn" class="btn btn-primary animate-up delay-4">
+                <span>ابدأ الآن</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+    </section>
+
+    <main id="dashboard" class="dashboard-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">اللوحة الرئيسية</h2>
+                <p class="section-subtitle">اختر أحد الأوراد والعبادات لملازمتها اليوم</p>
+            </div>
+
+            <div class="grid-dashboard">
+                <div class="dash-card" onclick="openPage('morning-azkar-page')">
+                    <div class="card-icon-wrapper icon-morning">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                    <h3>أذكار الصباح</h3>
+                    <p>حصن نفسك وباشر يومك بذكر الله وطمأنينة قلبك.</p>
+                </div>
+
+                <div class="dash-card" onclick="openPage('evening-azkar-page')">
+                    <div class="card-icon-wrapper icon-evening">
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                    <h3>أذكار المساء</h3>
+                    <p>اختم يومك بالسكينة والذكر، واطلب الحفظ والمغفرة.</p>
+                </div>
+
+                <div class="dash-card" onclick="openPage('quran-wird-page')">
+                    <div class="card-icon-wrapper icon-quran">
+                        <i class="fa-solid fa-book-quran"></i>
+                    </div>
+                    <h3>ورد القرآن</h3>
+                    <p>حافظ على نصيبك اليومي من كتاب الله تلاوةً وتدبراً.</p>
+                </div>
+
+                <div class="dash-card" onclick="openPage('salawat-page')">
+                    <div class="card-icon-wrapper icon-prophet">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3>الصلاة على النبي ﷺ</h3>
+                    <p>عطّر مجلسك ووقتك بالصلاة على رسول الله لرفع الدرجات.</p>
+                </div>
+
+                <div class="dash-card" onclick="openPage('istighfar-page')">
+                    <div class="card-icon-wrapper icon-istighfar">
+                        <i class="fa-solid fa-hands-praying"></i>
+                    </div>
+                    <h3>الاستغفار</h3>
+                    <p>محو الذنوب، سعة الرزق، وتفريج الهموم بملازمة الاستغفار.</p>
+                </div>
+
+                <div class="dash-card" onclick="openPage('tasbih-page')">
+                    <div class="card-icon-wrapper icon-tasbih">
+                        <i class="fa-solid fa-dharmachakra"></i>
+                    </div>
+                    <h3>السبحة الإلكترونية</h3>
+                    <p>عداد ذكي مرن يعينك على الأذكار والتسبيحات المطلقة.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="sub-page-overlay" class="page-overlay hidden">
+        <button class="close-overlay-btn" onclick="closeActivePage()"><i class="fa-solid fa-xmark"></i></button>
+        <div class="overlay-content-wrapper">
+
+            <div id="morning-azkar-page" class="sub-page hidden">
+                <div class="page-header">
+                    <h2>🌅 أذكار الصباح</h2>
+                    <div class="progress-container">
+                        <div class="progress-bar-meta"><span>نسبة الإنجاز</span><span id="morning-progress-text">0%</span></div>
+                        <div class="progress-bar-outer"><div id="morning-progress" class="progress-bar-inner"></div></div>
+                    </div>
+                </div>
+                <div id="morning-list" class="azkar-cards-container"></div>
+            </div>
+
+            <div id="evening-azkar-page" class="sub-page hidden">
+                <div class="page-header">
+                    <h2>🌙 أذكار المساء</h2>
+                    <div class="progress-container">
+                        <div class="progress-bar-meta"><span>نسبة الإنجاز</span><span id="evening-progress-text">0%</span></div>
+                        <div class="progress-bar-outer"><div id="evening-progress" class="progress-bar-inner"></div></div>
+                    </div>
+                </div>
+                <div id="evening-list" class="azkar-cards-container"></div>
+            </div>
+
+            <div id="quran-wird-page" class="sub-page hidden">
+                <div class="page-header">
+                    <h2>📖 ورد القرآن الكريم اليومي</h2>
+                </div>
+                <div class="wird-selection-card glass-panel">
+                    <h3>حدد مستهدفك الحالي:</h3>
+                    <div class="wird-options-grid">
+                        <button class="wird-opt-btn" onclick="setWirdGoal('صفحة واحدة', 1)">صفحة واحدة</button>
+                        <button class="wird-opt-btn" onclick="setWirdGoal('صفحتين', 2)">صفحتان</button>
+                        <button class="wird-opt-btn" onclick="setWirdGoal('٥ صفحات', 5)">٥ صفحات</button>
+                        <button class="wird-opt-btn" onclick="setWirdGoal('١٠ صفحات', 10)">١٠ صفحات</button>
+                        <button class="wird-opt-btn" onclick="setWirdGoal('حزب كامل', 11)">حزب كامل</button>
+                        <button class="wird-opt-btn" onclick="setWirdGoal('جزء كامل', 22)">جزء كامل</button>
+                    </div>
+                    <div class="wird-status-area">
+                        <p class="current-goal-lbl">المستهدف الحالي: <strong id="current-wird-goal">لم يحدد بعد</strong></p>
+                        <div class="wird-counter-display">
+                            <span class="counter-label">الصفحات المقروءة:</span>
+                            <span id="quran-page-count" class="counter-val">0</span>
+                        </div>
+                        <div class="counter-controls">
+                            <button class="counter-btn increment" onclick="changeWirdCount(1)"><i class="fa-solid fa-plus"></i></button>
+                            <button class="counter-btn reset" onclick="resetWirdCount()"><i class="fa-solid fa-rotate-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="salawat-page" class="sub-page hidden">
+                <div class="page-header">
+                    <h2>🤍 الصلاة على النبي ﷺ</h2>
+                </div>
+                <div class="counter-layout glass-panel">
+                    <div class="phrases-select-wrapper">
+                        <label for="salawat-select">اختر صيغة الصلاة والسلام:</label>
+                        <select id="salawat-select" class="styled-select">
+                            <option>اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى نَبِيِّنَا مُحَمَّدٍ</option>
+                            <option>اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ</option>
+                        </select>
+                    </div>
+                    <div class="giant-counter" id="salawat-counter-view">0</div>
+                    <div class="counter-controls-row">
+                        <button class="counter-btn-giant main-inc" onclick="incrementCounter('salawat')"><i class="fa-solid fa-plus"></i></button>
+                        <button class="counter-btn-giant secondary-res" onclick="resetCounter('salawat')"><i class="fa-solid fa-rotate-left"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="istighfar-page" class="sub-page hidden">
+                <div class="page-header">
+                    <h2>🤲 الاستغفار والتوبة</h2>
+                </div>
+                <div class="counter-layout glass-panel">
+                    <div class="phrases-select-wrapper">
+                        <label for="istighfar-select">صيغة الاستغفار المباركة:</label>
+                        <select id="istighfar-select" class="styled-select">
+                            <option>أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ</option>
+                            <option>أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ</option>
+                            <option>اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ</option>
+                        </select>
+                    </div>
+                    <div class="giant-counter" id="istighfar-counter-view">0</div>
+                    <div class="counter-controls-row">
+                        <button class="counter-btn-giant main-inc" onclick="incrementCounter('istighfar')"><i class="fa-solid fa-plus"></i></button>
+                        <button class="counter-btn-giant secondary-res" onclick="resetCounter('istighfar')"><i class="fa-solid fa-rotate-left"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tasbih-page" class="sub-page hidden">
+                <div class="page-header">
+                    <h2>📿 السبحة الإلكترونية المطورة</h2>
+                </div>
+                <div class="counter-layout glass-panel">
+                    <div class="phrases-select-wrapper">
+                        <label for="tasbih-select">اختر صيغة الذكر الحالية:</label>
+                        <select id="tasbih-select" class="styled-select" onchange="onTasbihDhikrChange()">
+                            <option value="subhan">سُبْحَانَ اللَّهِ</option>
+                            <option value="hamd">الْحَمْدُ لِلَّهِ</option>
+                            <option value="allah_akbar">اللَّهُ أَكْبَرُ</option>
+                            <option value="tawheed">لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ</option>
+                            <option value="hawqala">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ</option>
+                            <option value="subhan_bihamdihi">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ ، سُبْحَانَ اللَّهِ الْعَظِيمِ</option>
+                        </select>
+                    </div>
+                    <div class="giant-counter" id="tasbih-counter-view">0</div>
+                    <div class="counter-controls-row">
+                        <button class="counter-btn-giant main-inc" onclick="incrementTasbih()"><i class="fa-solid fa-plus"></i></button>
+                        <button class="counter-btn-giant secondary-res" onclick="resetTasbih()"><i class="fa-solid fa-rotate-left"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p class="footer-prayer">اللهم اغفر له وارحمه وعافه واعف عنه.</p>
+            <p class="footer-request">نسألكم الدعاء له بالرحمة والمغفرة.</p>
+            <div class="footer-divider"></div>
+            <p class="footer-copyright">صدقة جارية ممتدة العمل والمشاهدة © ٢٠٢٦</p>
+        </div>
+    </footer>
+
+    <script src="Azkar.js"></script>
+</body>
+</html>

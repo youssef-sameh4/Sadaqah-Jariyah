@@ -1,0 +1,345 @@
+/* ==========================================================================
+   RESET & SYSTEM VARIABLE DECLARATIONS (Premium Islamic Palette & Apple Ethos)
+   ========================================================================== */
+:root {
+    --font-primary: 'Cairo', sans-serif;
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --radius-premium: 16px;
+    --radius-round: 30px;
+    
+    /* Light Mode Variables (Luxurious Minimalist Setup) */
+    --bg-main: #f5f7f5;
+    --bg-header: rgba(245, 247, 245, 0.75);
+    --bg-card: rgba(255, 255, 255, 0.8);
+    --border-glass: rgba(0, 0, 0, 0.06);
+    --text-primary: #1c2b24;
+    --text-secondary: #5a6e63;
+    --primary-emerald: #115e3b;
+    --primary-emerald-light: #e8f5ee;
+    --accent-gold: #c29b38;
+    --shadow-premium: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+    --glow-color: rgba(194, 155, 56, 0.3);
+}
+
+.dark-mode {
+    /* Dark Mode Variables (Deep Minimal Vercel/Notion Dark) */
+    --bg-main: #0b120e;
+    --bg-header: rgba(11, 18, 14, 0.75);
+    --bg-card: rgba(20, 30, 25, 0.7);
+    --border-glass: rgba(255, 255, 255, 0.05);
+    --text-primary: #f0f4f2;
+    --text-secondary: #9cb0a5;
+    --primary-emerald: #1b9d63;
+    --primary-emerald-light: rgba(27, 157, 99, 0.1);
+    --accent-gold: #e0b853;
+    --shadow-premium: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    --glow-color: rgba(224, 184, 83, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-primary);
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   LOADER ELEMENT
+   ========================================================================== */
+.loader-container {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: var(--bg-main);
+    z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.loader-spinner {
+    width: 50px; height: 50px;
+    border: 3px solid var(--border-glass);
+    border-top: 3px solid var(--primary-emerald);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* ==========================================================================
+   NAVIGATION BAR HEADER
+   ========================================================================== */
+.main-header {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    background-color: var(--bg-header);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-glass);
+    transition: var(--transition-smooth);
+}
+.header-container {
+    max-width: 1300px; margin: 0 auto; padding: 15px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.logo-area {
+    display: flex; align-items: center; gap: 10px; cursor: pointer;
+}
+.brand-icon {
+    font-size: 1.4rem; color: var(--primary-emerald);
+}
+.brand-name {
+    font-size: 1.15rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.5px;
+}
+.theme-btn {
+    background: none; border: 1px solid var(--border-glass); width: 40px; height: 40px;
+    border-radius: 50%; color: var(--text-primary); cursor: pointer;
+    display: flex; align-items: center; justify-content: center; transition: var(--transition-smooth);
+}
+.theme-btn:hover {
+    background-color: var(--primary-emerald-light); transform: scale(1.05);
+}
+
+/* ==========================================================================
+   HERO LANDING SECTION
+   ========================================================================== */
+.hero-section {
+    position: relative; min-height: 100vh; display: flex; align-items: center;
+    justify-content: center; text-align: center; padding-top: 100px; overflow: hidden;
+}
+.hero-bg-decor {
+    position: absolute; width: 400px; height: 400px;
+    background: radial-gradient(circle, var(--primary-emerald-light) 0%, transparent 70%);
+    top: 20%; left: 50%; transform: translate(-50%, -50%); z-index: 1; pointer-events: none;
+}
+.hero-content {
+    position: relative; z-index: 2; max-width: 800px;
+}
+.hero-title {
+    font-size: 1.8rem; font-weight: 300; color: var(--text-secondary); margin-bottom: 20px;
+}
+.deceased-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-glass);
+    padding: 24px 60px; border-radius: var(--radius-premium); display: inline-block;
+    margin-bottom: 35px; box-shadow: 0 0 25px var(--glow-color);
+    animation: pulseBorder 4s infinite alternate;
+}
+.deceased-name {
+    font-size: 2.2rem; font-weight: 700; color: var(--primary-emerald);
+}
+.quran-verse {
+    font-size: 1.6rem; font-weight: 600; color: var(--accent-gold); margin-bottom: 25px;
+}
+.hero-message {
+    font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px auto;
+}
+.btn {
+    padding: 14px 36px; font-size: 1.1rem; font-weight: 600; border-radius: var(--radius-round);
+    border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
+    transition: var(--transition-smooth);
+}
+.btn-primary {
+    background-color: var(--primary-emerald); color: white;
+    box-shadow: 0 4px 15px rgba(27, 157, 99, 0.2);
+}
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.02); box-shadow: 0 6px 20px rgba(27, 157, 99, 0.3);
+}
+
+/* ==========================================================================
+   DASHBOARD ARCHITECTURE & GRID SYSTEM
+   ========================================================================== */
+.section-padding { padding: 100px 0; }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-title { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+.section-subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+
+.grid-dashboard {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px; margin-top: 20px;
+}
+.dash-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-premium); padding: 35px 25px; cursor: pointer;
+    box-shadow: var(--shadow-premium); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    transition: var(--transition-smooth); position: relative; overflow: hidden;
+}
+.dash-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--primary-emerald-light) 0%, transparent 100%);
+    opacity: 0; transition: var(--transition-smooth); z-index: 1;
+}
+.dash-card:hover {
+    transform: translateY(-6px); border-color: var(--primary-emerald);
+}
+.dash-card:hover::before { opacity: 1; }
+.dash-card:active { transform: scale(0.98); }
+
+.card-icon-wrapper {
+    position: relative; z-index: 2; width: 56px; height: 56px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px;
+}
+.icon-morning { background-color: #fef3c7; color: #d97706; }
+.icon-evening { background-color: #e0e7ff; color: #4f46e5; }
+.icon-quran { background-color: #dcfce7; color: #16a34a; }
+.icon-prophet { background-color: #fce7f3; color: #db2777; }
+.icon-istighfar { background-color: #ccfbf1; color: #0d9488; }
+.icon-tasbih { background-color: #f3e8ff; color: #9333ea; }
+
+.dash-card h3 { position: relative; z-index: 2; font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; }
+.dash-card p { position: relative; z-index: 2; color: var(--text-secondary); font-size: 0.95rem; }
+
+/* ==========================================================================
+   SUB-PAGES MODAL VIEW LAYER SYSTEM
+   ========================================================================== */
+.page-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--bg-main); z-index: 2000; overflow-y: auto;
+    padding: 80px 0; transition: var(--transition-smooth); opacity: 1; visibility: visible;
+}
+.page-overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.close-overlay-btn {
+    position: fixed; top: 25px; left: 25px; background: var(--bg-card);
+    border: 1px solid var(--border-glass); width: 45px; height: 45px; border-radius: 50%;
+    color: var(--text-primary); font-size: 1.2rem; cursor: pointer; display: flex;
+    align-items: center; justify-content: center; box-shadow: var(--shadow-premium); z-index: 2100;
+}
+.overlay-content-wrapper { max-width: 800px; width: 90%; margin: 0 auto; }
+.sub-page.hidden { display: none; }
+
+.page-header { margin-bottom: 40px; text-align: center; }
+.page-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 20px; }
+
+/* Progress Architecture */
+.progress-container { max-width: 400px; margin: 0 auto; }
+.progress-bar-meta { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 6px; color: var(--text-secondary); }
+.progress-bar-outer { width: 100%; height: 8px; background-color: var(--border-glass); border-radius: 4px; overflow: hidden; }
+.progress-bar-inner { width: 0%; height: 100%; background-color: var(--primary-emerald); transition: width 0.4s ease; }
+
+/* ==========================================================================
+   AZKAR LIST INTERFACE
+   ========================================================================== */
+.azkar-cards-container { display: flex; flex-direction: column; gap: 20px; }
+.azkar-card {
+    background: var(--bg-card); border: 1px solid var(--border-glass);
+    border-radius: var(--radius-premium); padding: 30px; box-shadow: var(--shadow-premium);
+    position: relative; transition: var(--transition-smooth); cursor: pointer;
+}
+.azkar-card.completed { opacity: 0.6; transform: scale(0.98); border-color: var(--primary-emerald-light); }
+.azkar-text { font-size: 1.3rem; font-weight: 600; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+.azkar-ref { font-size: 0.9rem; color: var(--accent-gold); margin-bottom: 10px; }
+.azkar-reward { font-size: 0.95rem; color: var(--text-secondary); background: var(--primary-emerald-light); padding: 10px 15px; border-radius: 8px; margin-bottom: 20px; }
+.azkar-footer-row { display: flex; justify-content: space-between; align-items: center; }
+.azkar-badge-complete { color: var(--primary-emerald); font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.azkar-counter-pill {
+    background: var(--primary-emerald); color: white; padding: 6px 18px; border-radius: 20px; font-weight: 600; font-size: 0.95rem;
+}
+.azkar-card.completed .azkar-counter-pill { background: var(--text-secondary); }
+
+/* ==========================================================================
+   QURAN WIRD / UTILITIES COMPONENTS
+   ========================================================================== */
+.glass-panel {
+    background: var(--bg-card); border: 1px solid var(--border-glass);
+    border-radius: var(--radius-premium); padding: 40px 30px; box-shadow: var(--shadow-premium);
+}
+.wird-selection-card h3 { font-size: 1.25rem; margin-bottom: 20px; text-align: center; }
+.wird-options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 40px; }
+.wird-opt-btn {
+    background: var(--bg-main); border: 1px solid var(--border-glass); padding: 14px;
+    border-radius: var(--radius-premium); color: var(--text-primary); cursor: pointer; font-weight: 600;
+    transition: var(--transition-smooth);
+}
+.wird-opt-btn:hover, .wird-opt-btn.active { background: var(--primary-emerald); color: white; border-color: var(--primary-emerald); }
+
+.wird-status-area { border-top: 1px solid var(--border-glass); padding-top: 30px; text-align: center; }
+.current-goal-lbl { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 20px; }
+.current-goal-lbl strong { color: var(--accent-gold); }
+.wird-counter-display { margin-bottom: 25px; }
+.counter-label { font-size: 1.1rem; display: block; margin-bottom: 10px; color: var(--text-secondary); }
+.counter-val { font-size: 4rem; font-weight: 700; color: var(--text-primary); }
+
+.counter-controls { display: flex; justify-content: center; gap: 20px; }
+.counter-btn {
+    width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; transition: var(--transition-smooth);
+}
+.counter-btn.increment { background-color: var(--primary-emerald); color: white; }
+.counter-btn.increment:active { transform: scale(0.9); }
+.counter-btn.reset { background-color: var(--border-glass); color: var(--text-primary); }
+
+/* ==========================================================================
+   GIANT DIGITAL COUNTERS SETUP (Salawat, Istighfar, Tasbih)
+   ========================================================================== */
+.counter-layout { text-align: center; max-width: 600px; margin: 0 auto; }
+.phrases-select-wrapper { margin-bottom: 40px; text-align: right; }
+.phrases-select-wrapper label { font-weight: 600; display: block; margin-bottom: 10px; color: var(--text-secondary); }
+.styled-select {
+    width: 100%; padding: 14px; border-radius: var(--radius-premium); background: var(--bg-main);
+    border: 1px solid var(--border-glass); color: var(--text-primary); font-size: 1.05rem; font-weight: 600; outline: none;
+}
+.giant-counter {
+    font-size: 6rem; font-weight: 700; margin: 40px 0; color: var(--primary-emerald);
+    transition: transform 0.1s ease;
+}
+.counter-controls-row { display: flex; justify-content: center; align-items: center; gap: 25px; }
+.counter-btn-giant { border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition-smooth); }
+.counter-btn-giant.main-inc { width: 90px; height: 90px; background-color: var(--primary-emerald); color: white; font-size: 2rem; box-shadow: 0 10px 25px rgba(27, 157, 99, 0.3); }
+.counter-btn-giant.main-inc:active { transform: scale(0.92); }
+.counter-btn-giant.secondary-res { width: 55px; height: 55px; background-color: var(--border-glass); color: var(--text-primary); font-size: 1.1rem; }
+
+/* ==========================================================================
+   FOOTER FRAMEWORK
+   ========================================================================== */
+.main-footer { background-color: var(--bg-card); border-top: 1px solid var(--border-glass); padding: 50px 0; text-align: center; }
+.footer-prayer { font-size: 1.4rem; font-weight: 700; color: var(--primary-emerald); margin-bottom: 10px; }
+.footer-request { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 25px; }
+.footer-divider { width: 60px; height: 2px; background-color: var(--accent-gold); margin: 0 auto 20px auto; }
+.footer-copyright { font-size: 0.85rem; color: var(--text-secondary); }
+
+/* ==========================================================================
+   ANIMATIONS ARCHITECTURE
+   ========================================================================== */
+@keyframes pulseBorder {
+    0% { box-shadow: 0 0 20px var(--glow-color); border-color: var(--border-glass); }
+    100% { box-shadow: 0 0 35px var(--glow-color); border-color: var(--accent-gold); }
+}
+
+.animate-up { opacity: 0; transform: translateY(30px); animation: runUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+.delay-4 { animation-delay: 0.6s; }
+
+@keyframes runUp { to { opacity: 1; transform: translateY(0); } }
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT MATRIX
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-title { font-size: 1.4rem; }
+    .deceased-card { padding: 18px 35px; }
+    .deceased-name { font-size: 1.7rem; }
+    .quran-verse { font-size: 1.3rem; }
+    .grid-dashboard { grid-template-columns: 1fr; gap: 16px; }
+    .wird-options-grid { grid-template-columns: repeat(2, 1fr); }
+    .giant-counter { font-size: 4.5rem; }
+    .azkar-text { font-size: 1.15rem; }
+}
